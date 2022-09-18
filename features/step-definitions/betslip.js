@@ -16,7 +16,7 @@ When(/^I add (\d+) bets to the betlip$/, async (numberofbets) => {
     }
 });
 
-Then(/^I can see (\d+) in the count of betslips$/, async (betcount) => {
+Then(/^I can see (\d+) in the count of bets$/, async (numberofbets) => {
     const BetslipBets = await $$(SportsPage.singleBetonSlip)
-    await expect(BetslipBets.count()).toBe(betcount)
+    await expect(BetslipBets.count()).toBe(numberofbets)
 });

@@ -4,9 +4,9 @@ Feature: Betslip
 
         Given I am on the sports page
         When I add <numberofbets> bets to the betlip
-        Then I can see <numberofbets> in the count of betslips
+        Then I can see <numberofbets> in the count of bets
     
-    Examples:
+        Examples:
         | numberofbets |
         | 1 |
         | 3 |
