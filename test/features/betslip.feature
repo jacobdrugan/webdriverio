@@ -9,4 +9,3 @@ Feature: Betslip
         Examples:
         | numberofbets |
         | 1 |
-        | 3 |

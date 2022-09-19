@@ -1,8 +1,5 @@
 export class Page {
-    /**
-    * Opens a sub page of the page
-    * @param path path of the sub page (e.g. /path/to/page.html)
-    */
+
     get btnLogin () {
         return $('._dc34219 > ._e637394')
     }

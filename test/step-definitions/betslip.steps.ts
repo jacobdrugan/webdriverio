@@ -11,9 +11,12 @@ Given(/^I am on the (\w+) page$/, async (page: keyof typeof pages) => {
 });
 
 When(/^I add (\d+) bets to the betlip$/, async (numberofbets) => {
+    expect (await Page.btnLogin).toBeDisplayed()
     await SportsPage.addNumberofBets(numberofbets)
 });
 
 Then(/^I can see (\d+) in the count of bets$/, async (numberofbets) => {
-
+    console.log(numberofbets)
+    console.log(SportsPage.countofbetsonslip)
+    expect(SportsPage.countofbetsonslip).toEqual(numberofbets)
 });
