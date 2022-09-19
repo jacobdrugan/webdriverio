@@ -12,6 +12,7 @@ Given(/^I am on the (\w+) page$/, async (page: keyof typeof pages) => {
 
 When(/^I add (\d+) bets to the betlip$/, async (numberofbets) => {
     expect (await Page.btnLogin).toBeDisplayed()
+    //Blocked here, cannot get assertion to work and therefore is blocking clicks from happening
     await SportsPage.addNumberofBets(numberofbets)
 });
 
