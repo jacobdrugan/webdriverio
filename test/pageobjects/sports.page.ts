@@ -13,16 +13,20 @@ export class SportsPage extends Page {
         return $$('[id^=single-bet-li-bet]')
     }
 
+    get mainContent () {
+        return $('.main-content-wrap')
+    }
     async addNumberofBets (numofbets:number) {
         for(let i = 0 ; i <= numofbets; i++){
             (await this.btnAddBet[i]).click()
         }
     }
 
+/*
     async countofbetsonslip () {
         return (await this.listBetslipcount).length
     }
-
+*/
     async open () {
         return await super.open('sports');
     }

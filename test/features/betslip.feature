@@ -1,11 +1,7 @@
 Feature: Betslip        
 
-    Scenario Outline: Adding a bet
+    Scenario: Adding a single bet
 
         Given I am on the sports page
-        When I add <numberofbets> bets to the betlip
-        Then I can see <numberofbets> in the count of bets
-    
-        Examples:
-        | numberofbets |
-        | 1 |
+        When I add 1 bet to the betlip
+        Then I can see 1 in the count of bets
