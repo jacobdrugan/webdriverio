@@ -36,6 +36,7 @@ export class Page {
        await this.btnOneTrustAccept.click()
     }
     async open (path) {
+        await browser.deleteAllCookies()
         await browser.url(`/${path}`)
     }
 }

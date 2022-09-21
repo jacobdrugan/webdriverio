@@ -17,7 +17,7 @@ export class SportsPage extends Page {
         return $('.main-content-wrap')
     }
     async addNumberofBets (numofbets:number) {
-        for(let i = 0 ; i <= numofbets; i++){
+        for(let i = 0 ; i < numofbets; i++){
             (await this.btnAddBet[i]).click()
         }
     }

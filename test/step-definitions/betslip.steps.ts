@@ -1,4 +1,4 @@
-import { Given,When,Then, BeforeStep } from "@wdio/cucumber-framework"
+import { Given,When,Then, Before, BeforeAll, After } from "@wdio/cucumber-framework"
 import Page from "../pageobjects/page"
 import SportsPage from '../pageobjects/sports.page'
 const pages = {
@@ -7,30 +7,24 @@ const pages = {
 
 Given(/^I am on the (\w+) page$/, async (page: keyof typeof pages) => {
     await pages[page].open()
+    await SportsPage.mainContent.waitForDisplayed()
     await Page.acceptOneTrust()
 });
 
-When(/^I add (\d+) bet to the betlip$/, async (numberofbets) => {
-    await SportsPage.mainContent.waitForDisplayed()
-    await SportsPage.addNumberofBets(numberofbets)
+When(/^I add 1 bet to the betlip$/, async () => {
+    await SportsPage.addNumberofBets(1)
 });
 
-Then(/^I can see (\d+) in the count of bets$/, async (numberofbets) => {
-    expect(SportsPage.listBetslipcount).toBeElementsArrayOfSize(numberofbets)
+Then(/^I can see 1 in the count of bets$/, async () => {
+    expect(SportsPage.listBetslipcount).toBeElementsArrayOfSize(1)
 });
 
-/*
-Given(/^I am on the (\w+) page$/, async (page: keyof typeof pages) => {
-    await pages[page].open()
-    await Page.acceptOneTrust()
+
+When(/^I add 3 bets to the betlip$/, async () => {
+    await SportsPage.addNumberofBets(3)
 });
 
-When(/^I add (\d+) bets to the betlip$/, async (numberofbets) => {
-    await SportsPage.mainContent.waitForDisplayed()
-    await SportsPage.addNumberofBets(numberofbets)
+Then(/^I can see 3 in the count of bets$/, async () => {
+    expect(SportsPage.listBetslipcount).toBeElementsArrayOfSize(3)
 });
 
-Then(/^I can see (\d+) in the count of bets$/, async (numberofbets) => {
-    expect(SportsPage.listBetslipcount).toBeElementsArrayOfSize(numberofbets)
-});
-*/

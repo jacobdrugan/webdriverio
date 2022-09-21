@@ -13,9 +13,9 @@ export const config: Options.Testrunner = {
     ],
     exclude: [
     ],
-    maxInstances: 1,
+    maxInstances: 5,
     capabilities: [{
-        maxInstances: 1,
+        maxInstances: 5,
         browserName: 'chrome',
         acceptInsecureCerts: true
     }],
@@ -37,7 +37,7 @@ export const config: Options.Testrunner = {
         failFast: false,
         snippets: true,
         source: true,
-        strict: true,
+        strict: false,
         tagExpression: '',
         timeout: 60000,
         ignoreUndefinedDefinitions: false
