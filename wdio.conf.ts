@@ -8,9 +8,7 @@ export const config: Options.Testrunner = {
             project: 'tsconfig.json'
         }
     },
-    specs: [
-        './test/features/**/*.feature'
-    ],
+    specs: ['./test/features/**/*.feature'],
     exclude: [
     ],
     maxInstances: 5,
@@ -30,7 +28,7 @@ export const config: Options.Testrunner = {
     reporters: ['spec'],
 
     cucumberOpts: {
-        require: ['./test/step-definitions/**/*.steps.ts'],
+        require: ['./test/step-definitions/**/*.ts'],
         backtrace: false,
         requireModule: [],
         dryRun: false,
