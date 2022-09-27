@@ -1,4 +1,4 @@
-import { Given,When,Then, Before, BeforeAll, After } from "@wdio/cucumber-framework"
+import { Given,When,Then } from "@wdio/cucumber-framework"
 import Page from "../pageobjects/page"
 import SportsPage from '../pageobjects/sports.page'
 const pages = {
